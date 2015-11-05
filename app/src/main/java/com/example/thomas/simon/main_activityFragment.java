@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -14,15 +15,12 @@ import android.widget.Button;
 public class main_activityFragment extends Fragment {
 
     public main_activityFragment() {
+        ImageView image;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_simon);
-//        Button button0 = (Button) findViewById(R.id.button_green);
-//        Button button1 = (Button) findViewById(R.id.button_green);
-//        Button[] buttons = {button0, button1};
     }
 
     @Override
@@ -32,10 +30,13 @@ public class main_activityFragment extends Fragment {
         Button newGame = (Button)rootView.findViewById(R.id.newGame);
         Button settings = (Button)rootView.findViewById(R.id.settings);
         Button leaderBoard = (Button)rootView.findViewById(R.id.leaderboard);
+        ImageView image=(ImageView)rootView.findViewById(R.id.imageView);
 
         newGame.setOnClickListener(createOnClickListener(Simon.class));
         leaderBoard.setOnClickListener(createOnClickListener(Leaderboard.class));
+
         return rootView;
+
     }
 
     public View.OnClickListener createOnClickListener(final Class next)
